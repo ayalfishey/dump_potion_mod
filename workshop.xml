@@ -1,0 +1,8 @@
+<Mod
+    name="Dump Potion"
+    description="A mod that allows you to dump the contents of the currently held potion."
+    tags="gameplay,quality of life,alchemy"
+    dont_upload_folders=""
+    dont_upload_files=""
+>
+</Mod>
