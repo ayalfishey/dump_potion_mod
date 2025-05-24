@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Launch Noita with debugger",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+              "command": "C:/Program Files (x86)/Steam/steamapps/common/Noita/noita_dev.exe",
+              "communication": "stdio"
+            },
+            "args": ["-debug_lua", "-no-console", "-luadebugger"],
+            "stopOnEntry": true,
+            "cwd": "C:/Program Files (x86)/Steam/steamapps/common/Noita/",
+            "env": {
+              "LOCAL_LUA_DEBUGGER_VSCODE": "1",
+              "DESTINATION_PATH": "mods/DumpPotionMod"
+            },
+            "verbose": true,
+            "pullBreakpointsSupport": true,
+            "scriptFiles": ["${workspaceFolder}/mods/DumpPotionMod/*.lua"],
+          }
+
+    ]
+}
