@@ -1,4 +1,4 @@
-# dump_potion
+# Dump Potion
 
 A Noita mod that allows you to instantly dump the contents of the currently held potion in the direction your player is facing.
 
