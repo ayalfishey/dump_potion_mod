@@ -36,3 +36,26 @@ end
 function ModSettingsGui(gui, in_main_menu)
     mod_settings_gui(mod_id, mod_settings, gui, in_main_menu)
 end
+
+function mod_setting_value_set(mod_id, gui, in_main_menu, setting, old_value, new_value)
+    if setting.id == "keybind" then
+        local key = tostring(new_value):upper()
+        -- Build keycode lookup (reuse logic from init.lua)
+        local keycode_lookup = {}
+        local keycodes_all = ModTextFileGetContent("data/scripts/debug/keycodes.lua") or ""
+        for line in keycodes_all:gmatch("Key_.-\n") do
+            local _, k, code = line:match("(Key_)(.+) = (%d+)")
+            if k and code then
+                keycode_lookup[k:upper()] = tonumber(code)
+            end
+        end
+        keycode_lookup["SPACE"] = 44
+        keycode_lookup[" "] = 44
+
+        if not keycode_lookup[key] then
+            GamePrint("Dump Potion: Invalid key! Reverting to previous value.")
+            return old_value
+        end
+    end
+    return new_value
+end

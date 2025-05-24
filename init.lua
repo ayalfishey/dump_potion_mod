@@ -28,6 +28,18 @@ function get_keycode_from_setting()
         last_valid_key = keycode
         return keycode
     else
+        -- Revert to last valid key in both setting and UI
+        local last_valid_char = nil
+        for k, v in pairs(keycode_lookup) do
+            if v == last_valid_key then
+                last_valid_char = k
+                break
+            end
+        end
+        if last_valid_char then
+            ModSettingSet("dump_potion.keybind", last_valid_char)
+            ModSettingSetNextValue("dump_potion.keybind", last_valid_char, false)
+        end
         return last_valid_key
     end
 end
