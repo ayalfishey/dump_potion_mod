@@ -1,5 +1,5 @@
 <Mod
-    name="dump_potion"
+    name="Dump Potion"
     description="A mod that allows you to dump the contents of the currently held potion."
     author="Minus4"
     version="1.0"
