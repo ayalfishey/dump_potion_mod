@@ -10,7 +10,7 @@ default_key = "K"
 mod_settings = {
     {
         id = "keybind",
-        ui_name = "Dump Potion Key",
+        ui_name = "Dump Potion Key ",
         ui_description = "Enter a single character (e.g., K, Z, space) for the key to dump the potion.",
         value_default = default_key,
         scope = MOD_SETTING_SCOPE_RUNTIME,
