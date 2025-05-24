@@ -9,7 +9,7 @@ end
 function load_file(file)
     local f = io.open(file, "r")
     if f == nil then
-        GamePrint("DumpPotionMod: Failed to open file: " .. file)
+        GamePrint("dump_potion: Failed to open file: " .. file)
         return nil
     end
     local content = f:read("*all")
@@ -18,12 +18,12 @@ function load_file(file)
 end
 
 function load_config()
-    local config_file = "mods/DumpPotionMod/config.xml"
-    local content = ModTextFileGetContent("mods/DumpPotionMod/config.xml")
+    local config_file = "mods/dump_potion/config.xml"
+    local content = ModTextFileGetContent("mods/dump_potion/config.xml")
     if content then
         local config = parse_xml(content)
         local key_binding = get_keycode_from_setting()
-        GamePrint("DumpPotionMod: Config loaded. Key: " .. key_binding)
+        GamePrint("dump_potion: Config loaded. Key: " .. key_binding)
         return key_binding
     end
     return nil
@@ -31,7 +31,7 @@ end
 
 -- Utility: Get the keycode for the configured keybind character
 function get_keycode_from_setting()
-    local char = ModSettingGet("DumpPotionMod.keybind") or "K"
+    local char = ModSettingGet("dump_potion.keybind") or "K"
     char = tostring(char):upper()
     -- Keycode mapping: fallback to K (14) or SPACE (44)
     if char == "SPACE" or char == " " then return 44 end

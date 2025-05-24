@@ -1,5 +1,5 @@
 dofile("data/scripts/lib/utilities.lua")
-dofile("mods/DumpPotionMod/settings.lua")
+dofile("mods/dump_potion/settings.lua")
 
 -- Build keycode lookup table from Noita's keycodes file
 function build_keycode_lookup()
@@ -21,7 +21,7 @@ local last_valid_key = keycode_lookup["K"] or 14
 
 -- Convert key name from settings to keycode, fallback to last valid
 function get_keycode_from_setting()
-    local char = ModSettingGet("DumpPotionMod.keybind") or "K"
+    local char = ModSettingGet("dump_potion.keybind") or "K"
     char = tostring(char):upper()
     local keycode = keycode_lookup[char]
     if keycode then
@@ -47,12 +47,12 @@ end
 
 -- Migrate legacy keycode value to key name
 function sanitize_keybind_setting()
-    local val = ModSettingGet("DumpPotionMod.keybind")
+    local val = ModSettingGet("dump_potion.keybind")
     if val and tonumber(val) then
         local keyname = get_keyname_from_keycode(val)
         if keyname then
-            ModSettingSet("DumpPotionMod.keybind", keyname)
-            ModSettingSetNextValue("DumpPotionMod.keybind", keyname, false)
+            ModSettingSet("dump_potion.keybind", keyname)
+            ModSettingSetNextValue("dump_potion.keybind", keyname, false)
         end
     end
 end
@@ -120,4 +120,4 @@ function spawn_material_in_facing_direction(material_name, material_count)
     GameCreateParticle(material_name, x, y, material_count, 0, 0, false, true)
 end
 
--- GamePrint("DumpPotionMod: Initialized.")
+-- GamePrint("dump_potion: Initialized.")

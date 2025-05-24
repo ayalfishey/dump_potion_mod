@@ -1,9 +1,9 @@
 <Mod
-    name="DumpPotionMod"
+    name="dump_potion"
     description="A mod that allows you to dump the contents of the currently held potion."
     author="Minus4"
     version="1.0"
-    path="mods/DumpPotionMod/"
+    path="mods/dump_potion/"
 >
     <Files>
         <File path="init.lua"/>

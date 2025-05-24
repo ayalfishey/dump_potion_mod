@@ -2,7 +2,7 @@
 dofile("data/scripts/lib/mod_settings.lua")
 
 -- Define mod ID and settings version
-local mod_id = "DumpPotionMod"
+local mod_id = "dump_potion"
 mod_settings_version = 1
 
 -- Mod settings table
@@ -10,7 +10,7 @@ default_key = "K"
 mod_settings = {
     {
         id = "keybind",
-        ui_name = "Potion Dump Key (Char)",
+        ui_name = "Dump Potion Key",
         ui_description = "Enter a single character (e.g., K, Z, space) for the key to dump the potion.",
         value_default = default_key,
         scope = MOD_SETTING_SCOPE_RUNTIME,
@@ -19,9 +19,9 @@ mod_settings = {
 }
 
 -- Migrate legacy keycode value ("14") to key name ("K") for users updating from old versions
-if ModSettingGet("DumpPotionMod.keybind") == "14" then
-    ModSettingSet("DumpPotionMod.keybind", default_key)
-    ModSettingSetNextValue("DumpPotionMod.keybind", default_key, false)
+if ModSettingGet("dump_potion.keybind") == "14" then
+    ModSettingSet("dump_potion.keybind", default_key)
+    ModSettingSetNextValue("dump_potion.keybind", default_key, false)
 end
 
 -- Mod settings update and GUI functions

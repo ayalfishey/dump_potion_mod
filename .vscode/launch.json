@@ -18,11 +18,11 @@
             "cwd": "C:/Program Files (x86)/Steam/steamapps/common/Noita/",
             "env": {
               "LOCAL_LUA_DEBUGGER_VSCODE": "1",
-              "DESTINATION_PATH": "mods/DumpPotionMod"
+              "DESTINATION_PATH": "mods/dump_potion"
             },
             "verbose": true,
             "pullBreakpointsSupport": true,
-            "scriptFiles": ["${workspaceFolder}/mods/DumpPotionMod/*.lua"],
+            "scriptFiles": ["${workspaceFolder}/mods/dump_potion/*.lua"],
           }
 
     ]
